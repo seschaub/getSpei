@@ -1,9 +1,11 @@
 
 # First installing and loading required packages: 
 # install.package("devtools")
+require(devtools)
+
 devtools::install_github('seschaub/getSpei')
 
-require(devtools)
+
 require(getSpei)
 
 
