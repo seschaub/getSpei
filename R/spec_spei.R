@@ -114,9 +114,10 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
       d_aux4z <- d_aux1 %>% mutate(coor_id = paste(lon,lat,sep="_"))
       d_aux4 <- d_aux1 %>% filter(is.na(spei))
       
-      if ( length(d_aux4$spei)>0) {   #(only if not all coordinates were matched with land area)
+      
       d_aux5<- semi_join(locations,d_aux4,by = c("lon_round" = "lon", "lat_round" = "lat"))
 
+      if ( length(d_aux5$spei)>0) {   #(only if not all coordinates were matched with land area)
       # get all possible spei location adjustements.
       d_aux6 <- d_aux5 %>%
 
