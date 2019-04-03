@@ -101,7 +101,7 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
 
 
 
-      # Correcing for locations that have no spei data:
+      # Correcing for locations that have no spei data 
       i_2010    <- (2010-data_start)*12+1
 
       spei_slice <- spei_array[, ,i_2010]
@@ -113,6 +113,8 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
 
       d_aux4z <- d_aux1 %>% mutate(coor_id = paste(lon,lat,sep="_"))
       d_aux4 <- d_aux1 %>% filter(is.na(spei))
+      
+      if ( length(d_aux4$spei)>0) {   #(only if not all coordinates were matched with land area)
       d_aux5<- semi_join(locations,d_aux4,by = c("lon_round" = "lon", "lat_round" = "lat"))
 
       # get all possible spei location adjustements.
@@ -139,6 +141,7 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
         mutate(lon_round = ifelse(is.na(lon_round_new),lon_round,lon_round_new),
                lat_round = ifelse(is.na(lat_round_new),lat_round,lat_round_new)) %>% select(-c(lon_round_new,lat_round_new))
 
+      }
     }
 
 
