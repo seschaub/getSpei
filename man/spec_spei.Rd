@@ -35,9 +35,24 @@ Beguería, S., Latorre, B., Reig, F. & Vicente-Serrano, S.M. (2019) The Standard
 }
 \author{
 Sergei Schaub, ETH Zürich, Agricultural Economics and Policy Group & Grassland Sciences Group
+
+Please cite the package as: 
+Schaub, S. (2019) getSpei: converting SPEI netCDF files to R data frames. R package. Version 3.4.19
+
 }
 \note{
-The function is partly based on a work from Bartlein P. J. (R for Earth-System Science).
+The function returns 
+\item{location_id}{location id, provided by user.}
+\item{longitude_loc}{longitude of location, provided by user.}
+\item{latitude_loc}{latitude of location, provided by user.}
+\item{lon}{longitude from which SPEI value is taken.}
+\item{lat}{latitude from which SPEI value is taken.}
+\item{year}{respective year}
+\item{month}{respective month}
+\item{speixx}{respective spei}
+
+
+Some initial ideas for the function are based on a work from Bartlein P. J. (R for Earth-System Science).
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -46,7 +61,12 @@ The function is partly based on a work from Bartlein P. J. (R for Earth-System S
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-# create dataframe
+
+# set working directory to directory where speixx.nc files are stored. 
+workdir <- "H:/folder1/folder2"
+setwd(workdir)
+
+# create dataframe of locations 1=Vienna, 2=Zurich, 3=New York City
 location_id  <- c(1,2,3)
 longitude    <- c(16.37,8.54,-74.25)
 latitude     <- c(48.20,47.37,40.71)
