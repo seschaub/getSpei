@@ -1,9 +1,9 @@
 Package: getSpei
-Type: Package
-Title: getSpei: converting SPEI netCDF files to R data frames. R package.
 Version: 0.1.0
+Type: Package
+Title: getSpei converting SPEI netCDF files to R data frames. R package.
 Author: Sergei Schaub
-Maintainer: Sergei Schaub. seschaub@ethz.ch
+Maintainer: Sergei Schaub <seschaub@ethz.ch>
 Description: see README
 License: Free software
 Encoding: UTF-8
