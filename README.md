@@ -1,10 +1,5 @@
 # getSpei
 
-asdfasdfasdfa
-
-
-# Project Title
-
 Converting SPEI netCDF files to R data frames. R package.
 
 ## Getting Started
