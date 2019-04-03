@@ -42,26 +42,26 @@ Schaub, S. (2019) getSpei: converting SPEI netCDF files to R data frames. R pack
 }
 \note{
 The function returns 
-\item{location_id}{location id, provided by user.}
-\item{longitude_loc}{longitude of location, provided by user.}
-\item{latitude_loc}{latitude of location, provided by user.}
-\item{lon}{longitude from which SPEI value is taken.}
-\item{lat}{latitude from which SPEI value is taken.}
-\item{year}{respective year}
-\item{month}{respective month}
-\item{speixx}{respective spei}
+location_id: location id, provided by user.
+longitude_loc: longitude of location, provided by user.
+latitude_loc: latitude of location, provided by user.
+lon: longitude from which SPEI value is taken.
+lat: latitude from which SPEI value is taken.
+year: respective year
+month: respective month
+speixx: respective spei
 
 
 Some initial ideas for the function are based on a work from Bartlein P. J. (R for Earth-System Science).
+
+SPEI values should be compared with values under: http://spei.csic.es/map/maps.html#months=1#month=1#year=2019
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+all_spei
 }
 \examples{
-
 # set working directory to directory where speixx.nc files are stored. 
 workdir <- "H:/folder1/folder2"
 setwd(workdir)
@@ -76,7 +76,8 @@ locations_df <- data.frame(location_id, longitude, latitude)
 d1 <- spec_spei(spei_files = c("spei01","spei06","spei12"), start_y = 2003, end_y = 2004, locations = locations_df)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+
+\keyword{ ~SPEI }
+\keyword{ ~netCDF }
+\keyword{ ~location }

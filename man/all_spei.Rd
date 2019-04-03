@@ -41,23 +41,21 @@ Schaub, S. (2019) getSpei: converting SPEI netCDF files to R data frames. R pack
 }
 \note{
 The function returns 
-\item{lon}{longitude from which SPEI value is taken.}
-\item{lat}{latitude from which SPEI value is taken.}
-\item{year}{respective year}
-\item{month}{respective month}
-\item{speixx}{respective spei}
-
+lon: longitude from which SPEI value is taken.
+lat: latitude from which SPEI value is taken.
+year: respective year
+month: respective month
+speixx: respective spei
 
 Some initial ideas for the function are based on a work from Bartlein P. J. (R for Earth-System Science).
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+SPEI values should be compared with values under: http://spei.csic.es/map/maps.html#months=1#month=1#year=2019
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+spec_spei
 }
 \examples{
-
 # set working directory to directory where speixx.nc files are stored. 
 workdir <- "H:/folder1/folder2"
 setwd(workdir)
@@ -65,9 +63,9 @@ setwd(workdir)
 # run function
 d1 <- all_spei(spei_files = c("spei01","spei06","spei12"), start_y = 2003, end_y = 2004)
 
-
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+
+\keyword{ ~SPEI }
+\keyword{ ~netCDF }
+\keyword{ ~location }
