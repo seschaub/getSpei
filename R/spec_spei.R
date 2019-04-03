@@ -8,7 +8,6 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
 
   require(tidyverse)
   require(ncdf4)
-  require(beepr)
   require(chron)
   require(stringr)
 

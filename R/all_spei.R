@@ -8,7 +8,6 @@ all_spei <- function(spei_files,start_y,end_y)
   
   require(tidyverse)
   require(ncdf4)
-  require(beepr)
   require(chron)
   
   

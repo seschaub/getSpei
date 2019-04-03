@@ -59,15 +59,15 @@ SPEI values should be compared with values under: http://spei.csic.es/map/maps.h
 
 
 \seealso{
-all_spei
+all_spei, all_spei_viz
 }
 \examples{
 # set working directory to directory where speixx.nc files are stored. 
 workdir <- "H:/folder1/folder2"
 setwd(workdir)
 
-# create dataframe of locations 1=Vienna, 2=Zurich, 3=New York City
-location_id  <- c(1,2,3)
+# create dataframe of three Vienna, Zurich, New York City
+location_id  <- c("Vienna", "Zurich", "New York City")
 longitude    <- c(16.37,8.54,-74.25)
 latitude     <- c(48.20,47.37,40.71)
 locations_df <- data.frame(location_id, longitude, latitude)

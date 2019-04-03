@@ -53,7 +53,7 @@ SPEI values should be compared with values under: http://spei.csic.es/map/maps.h
 }
 
 \seealso{
-spec_spei
+all_spei_viz, spec_spei
 }
 \examples{
 # set working directory to directory where speixx.nc files are stored. 
