@@ -65,10 +65,8 @@ list1 <- all_spei_viz(c("spei01"), year = 2003, month = 8)
 grid1 <- list1$grid
 d1    <- list1$data
 cutoffs <- c(-2, -1.5, -1, 1, 1.5, 2)
-levelplot(d1 ~ lon * lat, data = grid1, at = cutoffs, cuts = 6, pretty = T, col.regions = (rev(brewer.pal(10, "RdBu"))))
-
-
-
+color <- c("#ca0020","#f4a582","#bababa","#92c5de","#0571b0")
+levelplot(d1 ~ lon * lat, data = grid1, at = cutoffs, cuts = 6, pretty = T, col.regions = color)
 
 ####  References: 
 # Yu, M., Li, Q., Hayes, M. J., Svoboda, M. D., & Heim, R. R. (2014). 

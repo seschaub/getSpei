@@ -2,14 +2,13 @@ all_spei_viz <- function(spei_file,year,month)
 {
   
   #install and load needed packages
-  list.of.packages <- c("ncdf4","tidyverse","chron","RColorBrewer","lattice")
+  list.of.packages <- c("ncdf4","tidyverse","chron","lattice")
   new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
   if(length(new.packages)) install.packages(new.packages)
   
   require(tidyverse)
   require(ncdf4)
   require(chron)
-  require(RColorBrewer)
   require(lattice)
   
   
