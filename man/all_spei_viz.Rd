@@ -2,15 +2,14 @@
 \alias{all_spei_viz}
 \title{all_spei_viz}
 \description{
-This function converts netCDF files of the “Global SPEI database” (http://digital.csic.es/handle/10261/153475) into a list, consisting of a single 'brick' of an array and a grid. The list can be used for visualizing global SPEI values for a specific year and month. Note this function is based on netCDF data, which starts in 1901 (current standard).
+\emph{all_spei_viz} converts netCDF files of the \href{http://spei.csic.es/database.html}{Global SPEI database} into a list, which comprises a single 'brick' of an array of the netCDF and a grid ready for visualization. The list can be used for visualizing global SPEI values for a specific year and month. Note this function is based on netCDF data, which starts in 1901 (current standard).
 }
 \usage{
 all_spei_viz(spei_file,year,month) 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{spei_file}{spei_file is a string. The string is the filenames without filename extensions. netCDF files need to be downloaded before (http://digital.csic.es/handle/10261/153475) and the working directory needs to be set to the folder containing the file.
-}
+  \item{spei_file}{spei_file is a string. The string is the SPEI netCDF filename without filename extension (i.e. \emph{.nc}). The netCDF file needs to be downloaded from the \href{http://spei.csic.es/database.html}{Global SPEI database} before using this function.}
 \item{year}{year indicates the year of interest.}
 \item{month}{month indicates the year of interest.}
 }
@@ -32,17 +31,17 @@ Please cite the package as:
 Schaub, S. (2019) getSpei: converting SPEI netCDF files to R data frames. R package. Version 3.4.19
 }
 \note{
-The function returns a list consisting of 
-data: contains global SPEI information of one month in one year
-grid: grid of the SPEI values
+The function returns a list, which comprises 
+data: contains global SPEI information of one month in one year.
+grid: grid of the SPEI information.
 
 The function are based on a work from Bartlein P. J. (R for Earth-System Science).
 
-SPEI values should be compared with values under: http://spei.csic.es/map/maps.html#months=1#month=1#year=2019
+SPEI values should be compared with values available in the \href{http://spei.csic.es/map/maps.html#months=1#month=1#year=2019}{SPEI Global Drought Monitor}
 }
 
 \seealso{
-all_spei, spec_spei
+\code{\link{all_spei}}, \code{\link{spec_spei}}   
 }
 \examples{
 # set working directory to directory where speixx.nc files are stored. 
@@ -58,6 +57,7 @@ d1    <- list1$data
 cutoffs <- c(-2, -1.5, -1, 1, 1.5, 2)
 levelplot(d1 ~ lon * lat, data = grid1, at = cutoffs, cuts = 6, pretty = T, col.regions = (rev(brewer.pal(10, "RdBu"))))
 
+For a complete demonstration of this package, refer to \href{https://seschaub.github.io/getspeiweb/}{getSpei website}
 }
 
 
