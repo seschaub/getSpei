@@ -2,7 +2,7 @@
 \alias{all_spei_viz}
 \title{all_spei_viz}
 \description{
-\emph{all_spei_viz} converts netCDF files of the \href{http://spei.csic.es/database.html}{Global SPEI database} into a list, which comprises a single 'brick' of an array of the netCDF and a grid ready for visualization. The list can be used for visualizing global SPEI values for a specific year and month. Note this function is based on netCDF data, which starts in 1901 (current standard).
+\emph{all_spei_viz} converts netCDF files of the \href{http://spei.csic.es/database.html}{Global SPEI database} into a list, which comprises a single 'brick' of the array of the SPEI netCDF and a grid ready for visualization. The list can be used for visualizing global SPEI values for a specific year and month. Note this function is based on netCDF data, which starts in 1901 (current standard).
 }
 \usage{
 all_spei_viz(spei_file,year,month) 
