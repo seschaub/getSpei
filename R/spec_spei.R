@@ -123,10 +123,10 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
         left_join(d_aux3,by = c("coor_id3" = "coor_id"))
 
       # decompose best coordinate id (i.e. closest and containing a spei value) to new rounded coordinates:
-      d_aux6 <- d_aux6 %>%  mutate (lon_round_new = ifelse(!is.na(spei.x),word(d_aux6$coor_id1,sep = "_"),
-                                                           ifelse(!is.na(spei.y),word(d_aux6$coor_id2,sep = "_"),word(d_aux6$coor_id3,sep = "_"))),
-                                    lat_round_new = ifelse(!is.na(spei.x),word(d_aux6$coor_id1,2,sep = "_"),
-                                                           ifelse(!is.na(spei.y),word(d_aux6$coor_id2,2,sep = "_"),word(d_aux6$coor_id3,2,sep = "_")))) %>%
+      d_aux6 <- d_aux6 %>%  mutate (lon_round_new = as.numeric(ifelse(!is.na(spei.x),word(d_aux6$coor_id1,sep = "_"),
+                                                           ifelse(!is.na(spei.y),word(d_aux6$coor_id2,sep = "_"),word(d_aux6$coor_id3,sep = "_")))),
+                                    lat_round_new = as.numeric(ifelse(!is.na(spei.x),word(d_aux6$coor_id1,2,sep = "_"),
+                                                           ifelse(!is.na(spei.y),word(d_aux6$coor_id2,2,sep = "_"),word(d_aux6$coor_id3,2,sep = "_"))))) %>%
                            select(c(location_id,lon_round_new,lat_round_new))
 
       # update the location data frame with the new rounded coordinates: 
