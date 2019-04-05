@@ -108,7 +108,7 @@ spec_spei <- function(spei_files,start_y,end_y,locations)
       d_aux4 <- d_aux1 %>% filter(is.na(spei))                                               # create data frame that contains all coordinates of the spei variable that contains NAs (i.e. water area)
       d_aux5 <- semi_join(locations,d_aux4,by = c("lon_round" = "lon", "lat_round" = "lat")) # identify locations that were rounded to water grids 
 
-      if ( length(d_aux5$spei)>0) {   # Only run this part when at least one location was rounded to a water grid
+      if ( length(d_aux5$location_id)>0) {   # Only run this part when at least one location was rounded to a water grid
       
         
       # calculate differences of location to rounded location and create ids of coordinates (based on which rounded value is closer to the original location):
