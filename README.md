@@ -17,9 +17,9 @@ require(devtools)
 devtools::install_github('seschaub/getSpei')
 ```
 
-## Built With
+### Built With
 
-* [Example](http://www.) - The web framework used
+* [Example](https://seschaub.github.io/getspeiweb/) 
 
 
 ## Author
