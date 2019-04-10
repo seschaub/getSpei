@@ -24,6 +24,10 @@ region_spei <- function(spei_files,start_y,end_y,lon_min,lon_max,lat_min,lat_max
     
     spei_nc <- nc_open(file_name) # open the respective netcdf file of this loop, using the ncdf4 package
     
+    # get max time of the dataset in months
+    max_time <- length(ncvar_get(spei_nc,"time"))
+
+    
     # save longitude and latitude information:
     lon <- ncvar_get(spei_nc, "lon")
     lat <- ncvar_get(spei_nc, "lat", verbose = F)
@@ -39,7 +43,7 @@ region_spei <- function(spei_files,start_y,end_y,lon_min,lon_max,lat_min,lat_max
     data_start <- 1901                       # set start year of the database (current standard). 
     start_i    <- (start_y-data_start)*12+1  # months since the start of the database (1901) in the first month of the start year (i.e. start year inquired by user)
     end_i      <- (end_y-data_start+1)*12    # months between the start of the database (1901) and the last month of the end year (i.e. end year inquired by user)
-    
+    if(end_i > max_time){end_i = max_time}   # if the end of the required period is not yet in the SPEI netcdf data, take the latest time available
     
     # First sub-loop - run loop for each month of the spei file separately to extract month by month information: ####
     for(i in start_i:end_i) {
