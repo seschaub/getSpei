@@ -1,7 +1,7 @@
-\name{all_spei}
-\alias{all_spei}
+\name{region_spei}
+\alias{region_spei}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{all_spei
+\title{region_spei
 %%  ~~function to do ... ~~
 }
 \description{
